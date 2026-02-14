@@ -1,0 +1,718 @@
+/* .ask-iba-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: var(--z-fixed);
+}
+
+.ask-iba-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--gradient-secondary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-xl);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+}
+
+.ask-iba-icon {
+  font-size: 1.2rem;
+}
+
+.ask-iba-panel {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+  width: 320px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2xl);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ask-iba-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+}
+
+.ask-iba-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ask-iba-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.ask-iba-avatar .ask-iba-emoji {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  padding: 2px;
+  font-size: 0.9rem;
+}
+
+.ask-iba-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.ask-iba-name {
+  font-weight: 800;
+}
+
+.ask-iba-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.95;
+}
+
+.ask-iba-close {
+  margin-left: auto;
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.ask-iba-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ask-iba-tab {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-white);
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+.ask-iba-tab.active {
+  color: var(--color-primary-blue);
+  border-bottom: 3px solid var(--color-primary-blue);
+}
+
+.ask-iba-body {
+  padding: var(--spacing-md);
+}
+
+.ask-iba-admin-field {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ask-iba-admin-field label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.ask-iba-admin-field input {
+  padding: var(--spacing-sm);
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+}
+
+.ask-iba-message.bot {
+  background: var(--color-gray-light);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.ask-iba-quick-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-md);
+}
+
+.ask-iba-quick-actions button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-primary-blue);
+}
+
+.ask-iba-form {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.ask-iba-form input {
+  flex: 1;
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+}
+
+.ask-iba-send {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-primary-green);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ask-iba-btn-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.ask-iba-book-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ask-iba-status {
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+.ask-iba-status.success {
+  background: rgba(38, 170, 97, 0.1);
+  color: var(--color-primary-green);
+}
+
+.ask-iba-status.info {
+  background: rgba(28, 115, 167, 0.1);
+  color: var(--color-primary-blue-light);
+}
+
+.ask-iba-note {
+  margin-top: var(--spacing-xs);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.ask-iba-whatsapp {
+  display: inline-block;
+  margin-top: var(--spacing-md);
+  font-weight: 700;
+  color: #25D366;
+}
+
+ */
+
+/* ---------- */
+
+/* Ask Iba Chatbot - Modern Styling */
+
+/* Ask Iba Chatbot - Updated with Blue Color & Reduced Height */
+
+/* Ask Iba Chatbot - Green + Blue Gradient & Larger Avatar */
+
+.ask-iba-container {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+}
+
+/* Floating Button - GREEN TO BLUE GRADIENT */
+.ask-iba-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: rgb(255, 215, 0);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ask-iba-button:hover {
+  box-shadow: 0 12px 32px rgba(28, 115, 167, 0.5);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1e8e54 0%, #155a8a 100%); /* DARKER ON HOVER */
+}
+
+.ask-iba-btn-avatar {
+  width: 44px; /* INCREASED FROM 32px */
+  height: 44px;
+  border-radius: 25%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ask-iba-label {
+  font-weight: 700;
+}
+
+/* Pulse animation - GRADIENT COLORS */
+.ask-iba-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  /* background: linear-gradient(135deg, rgba(38, 170, 97, 0.3) 0%, rgba(28, 115, 167, 0.3) 100%); */
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Chat Panel */
+.ask-iba-panel {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+  width: 380px;
+  max-height: 520px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header - GREEN TO BLUE GRADIENT */
+.ask-iba-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #26aa61 0%, #1c73a7 100%); /* GREEN TO BLUE */
+  color: white;
+}
+
+.ask-iba-avatar {
+  position: relative;
+  width: 52px; /* INCREASED FROM 44px */
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.ask-iba-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ask-iba-status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px; /* INCREASED FROM 12px */
+  height: 14px;
+  background: #4ade80;
+  border: 3px solid white;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.ask-iba-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ask-iba-name {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.ask-iba-subtitle {
+  font-size: 12px;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.ask-iba-close {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.ask-iba-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Tabs */
+.ask-iba-tabs {
+  display: flex;
+  gap: 0;
+  background: linear-gradient(to right, rgba(38, 170, 97, 0.05), rgba(28, 115, 167, 0.05)); /* SUBTLE GRADIENT */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ask-iba-tab {
+  flex: 1;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  color: #6b7280;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.ask-iba-tab:hover {
+  background: linear-gradient(135deg, rgba(38, 170, 97, 0.08), rgba(28, 115, 167, 0.08));
+  color: #1c73a7;
+}
+
+.ask-iba-tab.active {
+  color: #1c73a7;
+  background: white;
+}
+
+.ask-iba-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #26aa61, #1c73a7); /* GRADIENT UNDERLINE */
+  border-radius: 3px 3px 0 0;
+}
+
+/* Body */
+.ask-iba-body {
+  padding: 16px;
+  overflow-y: auto;
+  max-height: 380px;
+  flex: 1;
+}
+
+/* Messages */
+.ask-iba-message.bot {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  background: linear-gradient(135deg, rgba(38, 170, 97, 0.08) 0%, rgba(28, 115, 167, 0.08) 100%); /* GRADIENT BACKGROUND */
+  border: 1px solid rgba(28, 115, 167, 0.15);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-avatar {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.message-content {
+  color: #1e293b;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+/* Quick Actions */
+.ask-iba-quick-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.ask-iba-quick-actions button {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: white;
+  border: 1.5px solid #e5e7eb;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.ask-iba-quick-actions button:hover {
+  background: linear-gradient(135deg, #26aa61 0%, #1c73a7 100%); /* GRADIENT ON HOVER */
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(28, 115, 167, 0.3);
+}
+
+/* Chat Form */
+.ask-iba-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ask-iba-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+
+.ask-iba-form input:focus {
+  outline: none;
+  border-color: #1c73a7;
+  box-shadow: 0 0 0 3px rgba(28, 115, 167, 0.1);
+}
+
+.ask-iba-send {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #26aa61 0%, #1c73a7 100%); /* GRADIENT BUTTON */
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 48px;
+}
+
+.ask-iba-send:hover {
+  background: linear-gradient(135deg, #1e8e54 0%, #155a8a 100%); /* DARKER ON HOVER */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(28, 115, 167, 0.4);
+}
+
+.ask-iba-send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* WhatsApp Link */
+.ask-iba-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 9px 14px;
+  background: #25D366;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.ask-iba-whatsapp:hover {
+  background: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-icon {
+  font-size: 16px;
+}
+
+/* Book Form */
+.ask-iba-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #1c73a7;
+  box-shadow: 0 0 0 3px rgba(28, 115, 167, 0.1);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.ask-iba-send.book-btn {
+  width: 100%;
+  padding: 11px;
+  margin-top: 6px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Status Messages */
+.ask-iba-status {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.ask-iba-status.success {
+  background: linear-gradient(135deg, rgba(38, 170, 97, 0.15), rgba(28, 115, 167, 0.15));
+  color: #155724;
+  border: 1px solid rgba(38, 170, 97, 0.3);
+}
+
+.ask-iba-status.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.ask-iba-status.info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Note */
+.ask-iba-note {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #6b7280;
+  text-align: center;
+  padding: 6px;
+  background: linear-gradient(135deg, rgba(38, 170, 97, 0.05), rgba(28, 115, 167, 0.05));
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .ask-iba-panel {
+    width: calc(100vw - 32px);
+    max-height: calc(100vh - 120px);
+  }
+
+  .ask-iba-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .ask-iba-label {
+    display: none;
+  }
+}
+
+/* Scrollbar Styling - GRADIENT COLORS */
+.ask-iba-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.ask-iba-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ask-iba-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #26aa61, #1c73a7); /* GRADIENT SCROLLBAR */
+  border-radius: 3px;
+}
+
+.ask-iba-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #1e8e54, #155a8a);
+}

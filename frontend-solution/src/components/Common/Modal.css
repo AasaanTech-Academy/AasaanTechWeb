@@ -1,0 +1,361 @@
+/* .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: var(--z-modal-backdrop);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  z-index: var(--z-modal);
+  max-height: 90vh;
+  overflow-y: auto;
+  max-width: 90vw;
+}
+
+.modal-sm {
+  width: 400px;
+}
+
+.modal-md {
+  width: 600px;
+}
+
+.modal-lg {
+  width: 800px;
+}
+
+.modal-xl {
+  width: 1000px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-gray);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.modal-close:hover {
+  background: var(--color-gray-light);
+  color: var(--color-text);
+}
+
+.modal-content {
+  padding: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 95vw;
+    max-width: 95vw;
+  }
+}
+ */
+
+
+ /* Modal Backdrop - Flex container for centering */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Modal Container */
+.modal {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+/* Modal Sizes */
+.modal-sm {
+  max-width: 400px;
+}
+
+.modal-md {
+  max-width: 600px;
+}
+
+.modal-lg {
+  max-width: 800px;
+}
+
+.modal-xl {
+  max-width: 1000px;
+}
+
+/* Modal Header - Fixed at top */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e5e5;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Close Button */
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Modal Content - Scrollable area */
+.modal-content {
+  padding: 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Ensure smooth scrolling */
+.modal-content {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Enroll Modal Specific Styles */
+.enroll-modal-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.enroll-modal-content p {
+  margin: 0 0 24px 0;
+  color: #666;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Quote Form Styles */
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.quote-form input,
+.quote-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.quote-form input:focus,
+.quote-form textarea:focus {
+  outline: none;
+  border-color: #26aa61;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(38, 170, 97, 0.1);
+}
+
+.quote-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Modal Actions */
+.enroll-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.enroll-modal-actions button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enroll-modal-actions .btn-primary {
+  background: #26aa61;
+  color: white;
+  border: none;
+}
+
+.enroll-modal-actions .btn-primary:hover {
+  background: #1e8e54;
+  transform: translateY(-1px);
+}
+
+.enroll-modal-actions .btn-outline {
+  background: transparent;
+  color: #666;
+  border: 1.5px solid #ddd;
+}
+
+.enroll-modal-actions .btn-outline:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-backdrop {
+    padding: 10px;
+  }
+  
+  .modal {
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    padding: 16px 20px;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .enroll-modal-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .enroll-modal-actions {
+    flex-direction: column;
+  }
+  
+  .enroll-modal-actions button {
+    width: 100%;
+  }
+}
+
+/* Animation support */
+.modal-backdrop,
+.modal {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+/* FORCE MODAL ON TOP OF EVERYTHING */
+.modal-backdrop {
+  z-index: 99999 !important;
+}
+
+.modal {
+  z-index: 100000 !important;
+}

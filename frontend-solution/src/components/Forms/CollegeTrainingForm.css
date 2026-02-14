@@ -1,0 +1,183 @@
+/* ========================
+   FORM CONTAINER
+======================== */
+.college-training-form {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* ========================
+   ROW (2 COLUMNS)
+======================== */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ========================
+   FORM GROUP
+======================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ========================
+   INPUTS / SELECT / TEXTAREA
+======================== */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db;
+  background: #fafafa;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.form-group select {
+  height: 44px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ========================
+   ERROR STATES
+======================== */
+input.error,
+select.error,
+textarea.error {
+  border-color: #ef4444;
+  background: #fff5f5;
+}
+
+.error-message {
+  font-size: 13px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* ========================
+   STATUS MESSAGES
+======================== */
+.submit-status {
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.submit-status.success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1.5px solid #10b981;
+  color: #059669;
+}
+
+.submit-status.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1.5px solid #ef4444;
+  color: #dc2626;
+}
+
+/* ========================
+   ACTION BUTTONS
+======================== */
+.form-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Submit button already styled by component,
+   we just enhance spacing */
+.submit-button {
+  min-width: 180px;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.whatsapp-button:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .submit-button,
+  .whatsapp-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .college-training-form {
+    padding: 1.4rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+}
