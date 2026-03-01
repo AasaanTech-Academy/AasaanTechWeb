@@ -55,9 +55,14 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link to="/login" className="sign-in-btn">
-            SIGN IN
-          </Link>
+          <a 
+            href="https://exam.aasaantech.com/login" 
+            className="sign-in-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EXAM PORTAL
+          </a>
         </div>
 
         <button
