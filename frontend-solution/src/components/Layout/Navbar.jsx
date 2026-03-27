@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import './Navbar.css';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,30 +12,33 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-     { path: '/', label: 'Home' }, 
-    { path: '/about', label: 'About Us' },
-    { path: '/courses', label: 'Courses' },
-    { path: '/services', label: 'Services' },
-    { path: '/college-training', label: 'College Training' },
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    { path: "/courses", label: "Courses" },
+    { path: "/services", label: "Services" },
+    { path: "/college-training", label: "College Training" },
     // { path: '/institutional-collaboration', label: 'Partnerships' },
-    { path: '/contact', label: 'Contact Us' }
+    { path: "/contact", label: "Contact Us" },
   ];
 
   const isActive = (path) => location.pathname === path;
 
   return (
     <motion.nav
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
+      className={`navbar ${isScrolled ? "scrolled" : ""}`}
       initial={false}
     >
       <div className="navbar-container">
         <Link to="/" className="logo">
-          <img src="/images/Copilot_20251115_184623.png" alt="AasaanTech Academy" />
+          <img
+            src="/images/Copilot_20251115_184623.png"
+            alt="AasaanTech Academy"
+          />
           <div className="brand-text">
             <div className="brand-line">
               <span className="aasaan">Aasaan</span>
@@ -50,13 +53,13 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+              className={`nav-link ${isActive(link.path) ? "active" : ""}`}
             >
               {link.label}
             </Link>
           ))}
-          <a 
-            href="https://exam.aasaantech.com/login" 
+          <a
+            href="https://exam.aasaantech.com/login"
             className="sign-in-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -70,7 +73,7 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
+          <span className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}>
             <span></span>
             <span></span>
             <span></span>
@@ -83,7 +86,7 @@ const Navbar = () => {
           <motion.div
             className="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
           >
@@ -91,20 +94,20 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
+                className={`mobile-nav-link ${isActive(link.path) ? "active" : ""}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
 
-            <Link
+            <a
               href="https://exam.aasaantech.com"
               className="mobile-sign-in-btn"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               EXAM PORTAL
-            </Link>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
