@@ -99,11 +99,11 @@ const Navbar = () => {
             ))}
 
             <Link
-              to="/login"
+              href="https://exam.aasaantech.com"
               className="mobile-sign-in-btn"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              SIGN IN
+              EXAM PORTAL
             </Link>
           </motion.div>
         )}
